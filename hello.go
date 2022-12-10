@@ -4,32 +4,33 @@ import (
 	"fmt"
 )
 
-func outer() {
-	var s4 = "outer"
-	fmt.Println(s4)
-}
 func main() {
-	fmt.Println("Hello, World")
-
 	var i int = 100
+	var i2 int64 = 200
 
-	fmt.Println(i)
+	fmt.Println(i + 50)
 
-	var s string = "Hello go"
-	fmt.Println(s)
+	fmt.Printf("%T\n", i2)
+	fmt.Printf("%T\n", int32(i2))
+	fmt.Print(int32(i) + int32(i2))
 
-	var t, f bool = true, false
-	fmt.Println(t, f)
+	var fl64 float64 = 2.4
+	fmt.Println(fl64)
 
-	var (
-		i2 int    = 200
-		s2 string = "Golang"
-	)
-	fmt.Println(i2, s2)
+	fl := 3.2
+	fmt.Printf("%T\n", fl)
+	fmt.Printf("%T\n", fl64)
 
-	i4 := 400
-	fmt.Println(i4)
+	var fl32 float32 = 1.2
+	fmt.Printf("%T\n", fl32)
 
-	outer()
+	zero := 0.0
+	pinf := 1.0
+	fmt.Println(pinf)
 
+	ninf := -1.0 / zero
+	fmt.Println(ninf)
+
+	nan := zero / zero
+	fmt.Println(nan)
 }
