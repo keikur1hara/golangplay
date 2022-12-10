@@ -5,19 +5,13 @@ import (
 )
 
 func main() {
-	var t, f bool = true, false
-	fmt.Println(t, f)
+	byteA := []byte{72, 73}
+	fmt.Println(byteA)
 
-	var s string = "Hello"
-	fmt.Println(s)
-	fmt.Printf("%T\n", s)
+	fmt.Println(string(byteA))
 
-	var si string = "test"
-	fmt.Println(si)
-	fmt.Printf("%T\n", si)
+	c := []byte("HI")
+	fmt.Println(c)
 
-	fmt.Println("\"")
-
-	fmt.Println(s[0])
-	fmt.Println(string(s[0]))
+	fmt.Println(string(c))
 }
