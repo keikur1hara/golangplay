@@ -2,31 +2,55 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func main() {
-	var arri [3]int
-	fmt.Println(arri)
+	// var x interface{}
+	// fmt.Println(x)
 
-	fmt.Printf("%T\n", arri)
+	// x = 1
+	// fmt.Println(x)
 
-	var arri2 [3]string = [3]string{"A", "B"}
-	fmt.Println(arri2)
+	// x = 3.14
+	// fmt.Println(x)
 
-	arri3 := [3]int{1, 2, 3}
-	fmt.Println(arri3)
+	// x = "string"
+	// fmt.Println(x)
 
-	arri4 := [...]string{"C", "D"}
-	fmt.Println(arri4)
-	fmt.Printf("%T\n", arri4)
+	// var i int = 1
+	// fl64 := float64(i)
 
-	fmt.Println(arri2[0])
-	fmt.Println(arri2[1])
-	fmt.Println(arri2[2-1])
+	// fmt.Println(fl64)
+	// fmt.Printf("%T\n", i)
+	// fmt.Printf("%T\n", fl64)
 
-	arri2[2] = "C"
-	fmt.Println(arri2)
+	// i2 := int(fl64)
+	// fmt.Printf("%T\n", i2)
 
-	fmt.Println(len(arri))
+	// fl := 10.5
+	// i3 := int(fl)
+
+	// fmt.Printf("%T\n", i3)
+	// fmt.Printf("%T\n", fl)
+
+	var s string = "100"
+	fmt.Printf("s = %T\n", s)
+
+	i, _ := strconv.Atoi(s)
+	fmt.Println(i)
+	fmt.Printf("i = %T\n", i)
+
+	var i2 int = 200
+	s2 := strconv.Itoa(i2)
+	fmt.Println(s2)
+	fmt.Printf("s2 = %T\n", s2)
+
+	var h string = "heelo world"
+	b := []byte(h)
+	fmt.Println(b)
+
+	h2 := string(b)
+	fmt.Println(h2)
 
 }
