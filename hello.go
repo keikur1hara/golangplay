@@ -2,28 +2,41 @@ package main
 
 import "fmt"
 
-const Pi = 3.14
-
-const (
-	URL      = "http://google.com"
-	SiteName = "Google"
-)
-
-const (
-	A = iota
-	B
-	C
-	D = "A"
-	E
-	F
-)
-
-var Big int
-
 func main() {
-	fmt.Println(Pi)
-	fmt.Println(URL, SiteName)
+	fmt.Println(1 + 2)
+	fmt.Println("ABC" + "DE")
+	fmt.Println(5 - 1)
+	fmt.Println(5 * 4)
+	fmt.Println(60 / 3)
+	fmt.Println(9 % 4)
 
-	fmt.Println(A, B, C, D, E, F)
+	n := 0
+	n += 4
+	fmt.Println(n)
+	n++
+	fmt.Println(n)
+	n--
+	fmt.Println(n)
+	s := "ABC"
+	s += "DEF"
+	fmt.Println(s)
+
+	fmt.Println(1 == 1)
+	fmt.Println(1 == 2)
+	fmt.Println(4 <= 6)
+	fmt.Println(4 < 6)
+	fmt.Println(4 > 6)
+
+	fmt.Println(true == false)
+	fmt.Println(true != false)
+
+	fmt.Println(true && false == true)
+	fmt.Println(true && true == true)
+	fmt.Println(true && false == false)
+	fmt.Println(true || false == false)
+	fmt.Println(true || false == true)
+
+	fmt.Println(!true)
+	fmt.Println(!false)
 
 }
