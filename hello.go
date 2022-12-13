@@ -1,25 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
-	a := 0
-	if a == 2 {
-		fmt.Println("two")
-	} else if a == 1 {
-		fmt.Println("One")
-	} else {
-		fmt.Println("I dont know")
-	}
 
-	if b := 100; b == 100 {
-		fmt.Println("one hundred")
-	}
+	var s string = "100"
 
-	x := 0
-	if x := 2; true {
-		fmt.Println(x)
+	i, err := strconv.Atoi(s)
+	if err != nil {
+		fmt.Println(err)
 
 	}
-	fmt.Println(x)
+
+	fmt.Printf("i = %T\n", i)
+
 }
