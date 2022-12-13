@@ -2,25 +2,24 @@ package main
 
 import "fmt"
 
-func integers() func() int {
-	i := 0
-	return func() int {
-		i++
-		return i
-	}
-}
-
 func main() {
-	ints := integers()
+	a := 0
+	if a == 2 {
+		fmt.Println("two")
+	} else if a == 1 {
+		fmt.Println("One")
+	} else {
+		fmt.Println("I dont know")
+	}
 
-	fmt.Println(ints())
-	fmt.Println(ints())
-	fmt.Println(ints())
-	fmt.Println(ints())
-	fmt.Println(ints())
-	fmt.Println(ints())
-	fmt.Println(ints())
-	fmt.Println(ints())
-	fmt.Println(ints())
+	if b := 100; b == 100 {
+		fmt.Println("one hundred")
+	}
 
+	x := 0
+	if x := 2; true {
+		fmt.Println(x)
+
+	}
+	fmt.Println(x)
 }
