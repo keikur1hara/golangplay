@@ -1,52 +1,43 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	i := 0
+	// n := 5
+	// switch n {
+	// case 1, 2:
+	// 	fmt.Println("1 or 2")
+	// case 3, 4:
+	// 	fmt.Println("3 or 4")
+	// default:
+	// 	fmt.Println("I dont know")
+	// }
 
-	for {
+	// switch n := 2; n {
+	// case 1, 2:
+	// 	fmt.Println("1 or 2")
+	// case 3, 4:
+	// 	fmt.Println("3 or 4")
+	// default:
+	// 	fmt.Println("I dont know")
+	// }
 
-		fmt.Println("Loop")
-		i++
-		if i == 3 {
-			break
-		}
-	}
+	// n := 6
+	// switch {
+	// case n > 0 && n < 4:
+	// 	fmt.Println("0 < n < 4")
+	// case n > 3 && n < 7:
+	// 	fmt.Println("3 < n < 7")
+	// }
 
-	point := 0
-	for point < 10 {
-		fmt.Println(point)
-		point++
-	}
-
-	for i := 0; i < 10; i++ {
-		if i == 3 {
-			continue
-		}
-		if i == 6 {
-			break
-		}
-		fmt.Println(i)
-	}
-
-	arr := [3]int{1, 2, 3}
-
-	for i := 0; i < len(arr); i++ {
-		fmt.Println(arr[i])
-	}
-
-	for _, v := range arr {
-		fmt.Println(v)
-	}
-
-	sl := []string{"Python", "PHP", "GO"}
-	for i, v := range sl {
-		fmt.Println(i, v)
-	}
-
-	m := map[string]int{"apple": 100, "banana": 200}
-	for k, v := range m {
-		fmt.Println(k, v)
+	switch n := 2; n {
+	case 1, 2:
+		fmt.Println("1 or 2")
+	case 3, 4:
+		fmt.Println("3 or 4")
+	default:
+		fmt.Println("I dont know")
 	}
 }
