@@ -1,30 +1,22 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
+
+func Sum(s ...int) int {
+	n := 0
+	for _, v := range s {
+		n += v
+	}
+	return n
+}
 
 func main() {
-	sl := []int{100, 200}
-	fmt.Println(sl)
 
-	sl = append(sl, 300)
-	fmt.Println(sl)
+	fmt.Println(Sum(1, 2, 3))
 
-	sl = append(sl, 400, 500, 600)
-	fmt.Println(sl)
+	fmt.Println(Sum(1, 2, 3, 4, 5, 6, 7, 8, 9))
+	fmt.Println(Sum())
 
-	sl2 := make([]int, 5, 10)
-	fmt.Println(sl2)
-
-	fmt.Println(len(sl2))
-
-	fmt.Println(cap(sl2))
-
-	sl3 := make([]int, 5, 10)
-	sl3 = append(sl3, 1, 2, 3, 4, 5, 6, 7)
-	fmt.Println(sl3)
-	fmt.Println(len(sl3))
-	fmt.Println(cap(sl3))
-
+	sl := []int{1, 2, 3}
+	fmt.Println(Sum(sl...))
 }
