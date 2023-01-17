@@ -2,21 +2,44 @@ package main
 
 import "fmt"
 
-func Sum(s ...int) int {
-	n := 0
-	for _, v := range s {
-		n += v
-	}
-	return n
-}
-
 func main() {
 
-	fmt.Println(Sum(1, 2, 3))
+	var m = map[string]int{"A": 100, "B": 200}
+	fmt.Println(m)
 
-	fmt.Println(Sum(1, 2, 3, 4, 5, 6, 7, 8, 9))
-	fmt.Println(Sum())
+	m2 := map[string]int{"A": 100, "B": 200}
 
-	sl := []int{1, 2, 3}
-	fmt.Println(Sum(sl...))
+	fmt.Println(m2)
+
+	m3 := map[int]string{
+		1: "A",
+		2: "B",
+	}
+
+	fmt.Println(m3)
+
+	m4 := make(map[int]string)
+	fmt.Println(m4)
+
+	m4[1] = "JAPAN"
+	m4[2] = "USA"
+	fmt.Println(m4)
+
+	fmt.Println(m["A"])
+	fmt.Println(m4[2])
+	fmt.Println(m4[3])
+
+	s, ok := m4[4]
+	fmt.Println(s)
+	if !ok {
+		fmt.Println("error")
+	}
+	fmt.Println(s, ok)
+
+	m3[3] = "aa"
+	fmt.Println(m3)
+
+	delete(m3, 3)
+	fmt.Println(m3)
+
 }
