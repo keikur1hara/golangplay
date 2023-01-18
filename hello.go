@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func reciever(name string, ch chan int) {
@@ -17,28 +16,13 @@ func reciever(name string, ch chan int) {
 }
 
 func main() {
-	ch1 := make(chan int, 2)
-
-	// ch1 <- 1
-
-	// close(ch1)
-
-	// i, ok := <-ch1
-	// fmt.Println(i,ok)
-
-	// i2,ok := <-ch1
-	// fmt.Println(i,ok)
-
-	go reciever("1.goroutin", ch1)
-	go reciever("2.goroutin", ch1)
-	go reciever("3.goroutin", ch1)
-
-	i := 0
-	for i < 100 {
-		ch1 <- i
-		i++
-	}
+	ch1 := make(chan int, 3)
+	ch1 <- 1
+	ch1 <- 2
+	ch1 <- 3
 	close(ch1)
-	time.Sleep(3 * time.Second)
+	for i := range ch1 {
+		fmt.Println(i)
+	}
 
 }
