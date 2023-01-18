@@ -4,41 +4,45 @@ import (
 	"fmt"
 )
 
-func Double2(i *int) {
-	*i = *i * 2
+type User struct {
+	Name string
+	Age  int
+	//	X,Y int
 }
 
-func Doublev3(s []int) {
-	for i, v := range s {
-		s[i] = v * 2
-	}
+func UpdateUser(user User) {
+	user.Name = "A"
+	user.Age = 1000
+}
+
+func UpdateUser2(user *User) {
+	user.nNm
 }
 
 func main() {
-	var n int = 100
-	fmt.Println(n)
-	fmt.Println(&n)
+	var user1 User
+	user1.Age = 29
+	user1.Name = "Kei"
+	fmt.Println(user1)
 
-	//Double(n)
-	fmt.Println(n)
+	user2 := User{}
+	fmt.Println(user2)
+	user2.Name = "user2"
+	fmt.Println(user2)
 
-	var p *int = &n
-	fmt.Println(p)
-	fmt.Println(*p)
+	user3 := User{Name: "user3", Age: 30}
+	fmt.Println(user3)
 
-	*p = 300
-	fmt.Println(n)
+	user4 := User{"user4", 40}
+	fmt.Println(user4)
 
-	n = 200
-	fmt.Println(*p)
+	user6 := User{Name: "user6"}
+	fmt.Println(user6)
 
-	Double2(&n)
-	fmt.Println(n)
+	user7 := new(User)
+	fmt.Println(user7)
 
-	Double2(p)
-	fmt.Println(*p)
+	user8 := &User{}
+	fmt.Println(user8)
 
-	var sl []int = []int{1, 2, 3}
-	Doublev3(sl)
-	fmt.Println(sl)
 }
