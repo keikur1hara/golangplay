@@ -10,39 +10,30 @@ type User struct {
 	//	X,Y int
 }
 
-func UpdateUser(user User) {
-	user.Name = "A"
-	user.Age = 1000
+func (u User) SayName() {
+	fmt.Println(u.Name)
 }
 
-func UpdateUser2(user *User) {
-	user.nNm
+func (u User) SetName(name string) {
+	u.Name = name
+}
+
+func (u *User) SetName2(name string) {
+	u.Name = name
 }
 
 func main() {
-	var user1 User
-	user1.Age = 29
-	user1.Name = "Kei"
-	fmt.Println(user1)
+	user1 := User{Name: "user1"}
+	user1.SayName()
 
-	user2 := User{}
-	fmt.Println(user2)
-	user2.Name = "user2"
-	fmt.Println(user2)
+	user1.SetName("A")
+	user1.SayName()
 
-	user3 := User{Name: "user3", Age: 30}
-	fmt.Println(user3)
+	user1.SetName2("A")
+	user1.SayName()
 
-	user4 := User{"user4", 40}
-	fmt.Println(user4)
-
-	user6 := User{Name: "user6"}
-	fmt.Println(user6)
-
-	user7 := new(User)
-	fmt.Println(user7)
-
-	user8 := &User{}
-	fmt.Println(user8)
+	user2 := &User{Name: "user2"}
+	user2.SetName2("B")
+	user2.SayName()
 
 }
