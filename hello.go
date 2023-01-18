@@ -4,59 +4,41 @@ import (
 	"fmt"
 )
 
+func Double2(i *int) {
+	*i = *i * 2
+}
+
+func Doublev3(s []int) {
+	for i, v := range s {
+		s[i] = v * 2
+	}
+}
+
 func main() {
-	ch1 := make(chan int, 22)
-	ch2 := make(chan string, 2)
+	var n int = 100
+	fmt.Println(n)
+	fmt.Println(&n)
 
-	ch2 <- "A"
+	//Double(n)
+	fmt.Println(n)
 
-	// v1 := <-ch1
-	// v2 := <-ch2
-	// fmt.Println(v1)
-	// fmt.Println(v2)
+	var p *int = &n
+	fmt.Println(p)
+	fmt.Println(*p)
 
-	select {
-	case v1 := <-ch1:
-		fmt.Println(v1 + 1000)
-	case v2 := <-ch2:
-		fmt.Println(v2 + "!?")
-	default:
-		fmt.Println("どちらでもない")
-	}
+	*p = 300
+	fmt.Println(n)
 
-	ch3 := make(chan int)
-	ch4 := make(chan int)
-	ch5 := make(chan int)
+	n = 200
+	fmt.Println(*p)
 
-	go func() {
-		for {
-			i := <-ch3
-			ch4 <- i * 2
-		}
-	}()
+	Double2(&n)
+	fmt.Println(n)
 
-	go func() {
-		for {
-			i2 := <-ch4
-			ch5 <- i2 - 1
-		}
-	}()
+	Double2(p)
+	fmt.Println(*p)
 
-	n := 0
-L:
-	for {
-		select {
-		case ch3 <- n:
-			n++
-		case i3 := <-ch5:
-			fmt.Println("recieved", i3)
-		default:
-			if n > 100 {
-				break L
-			}
-
-		}
-
-	}
-
+	var sl []int = []int{1, 2, 3}
+	Doublev3(sl)
+	fmt.Println(sl)
 }
